@@ -56,5 +56,6 @@
     }
   ],
   "startupDelay": 5000,
-  "registerServersWithProxy": true
+  "registerServersWithProxy": true,
+  "serverRegistrationDelay": 10000
 }

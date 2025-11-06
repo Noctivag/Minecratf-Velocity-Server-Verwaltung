@@ -87,6 +87,7 @@ public class ConfigManager {
         
         config.startupDelay = 5000; // 5 seconds delay between server starts
         config.registerServersWithProxy = true;
+        config.serverRegistrationDelay = 10000; // 10 seconds warmup before proxy registration
     }
 
     public void saveConfig() {
@@ -109,6 +110,7 @@ public class ConfigManager {
         public List<ServerConfig> servers;
         public int startupDelay;
         public boolean registerServersWithProxy;
+        public int serverRegistrationDelay;
     }
 
     public static class ServerConfig {

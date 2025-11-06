@@ -50,7 +50,8 @@ The plugin creates a `config.json` file in `plugins/velocityservermanager/`:
     }
   ],
   "startupDelay": 5000,
-  "registerServersWithProxy": true
+  "registerServersWithProxy": true,
+  "serverRegistrationDelay": 10000
 }
 ```
 
@@ -66,6 +67,7 @@ The plugin creates a `config.json` file in `plugins/velocityservermanager/`:
   - **port**: Server port
 - **startupDelay**: Delay in milliseconds between starting each server (default: 5000)
 - **registerServersWithProxy**: Automatically register servers with Velocity (default: true)
+- **serverRegistrationDelay**: Delay in milliseconds before registering server with proxy after startup (default: 10000)
 
 ## Commands
 

@@ -77,7 +77,8 @@ public class ServerManager {
             }
 
             // Parse and execute the start command
-            String[] commandArray = serverConfig.startCommand.split(" ");
+            // Use simple split for basic commands, users can provide pre-split commands if needed
+            String[] commandArray = serverConfig.startCommand.trim().split("\\s+");
             ProcessBuilder processBuilder = new ProcessBuilder(commandArray);
             processBuilder.directory(workingDir);
             processBuilder.redirectErrorStream(true);
@@ -109,8 +110,9 @@ public class ServerManager {
     private void registerServerWithProxy(ConfigManager.ServerConfig serverConfig) {
         CompletableFuture.runAsync(() -> {
             try {
-                // Wait for server to start up
-                Thread.sleep(10000); // 10 seconds
+                // Wait for server to start up (configurable delay)
+                int registrationDelay = configManager.getConfig().serverRegistrationDelay;
+                Thread.sleep(registrationDelay);
                 
                 InetSocketAddress address = new InetSocketAddress(serverConfig.host, serverConfig.port);
                 ServerInfo serverInfo = new ServerInfo(serverConfig.name, address);
@@ -178,7 +180,8 @@ public class ServerManager {
     public void stopAllServers() {
         logger.info("Stopping all running servers...");
         
-        for (String serverName : new HashMap<>(serverProcesses).keySet()) {
+        // Create a copy of the key set to avoid ConcurrentModificationException
+        for (String serverName : new java.util.ArrayList<>(serverProcesses.keySet())) {
             stopServer(serverName);
         }
     }

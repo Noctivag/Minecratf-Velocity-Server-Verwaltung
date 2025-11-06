@@ -66,7 +66,8 @@ Edit `plugins/velocityservermanager/config.json`:
     }
   ],
   "startupDelay": 5000,
-  "registerServersWithProxy": true
+  "registerServersWithProxy": true,
+  "serverRegistrationDelay": 10000
 }
 ```
 
@@ -77,12 +78,14 @@ Edit `plugins/velocityservermanager/config.json`:
 - **startCommand**: Full command to start the server
   - Add `nogui` flag to prevent GUI from opening
   - Adjust memory flags (`-Xmx`, `-Xms`) based on your server's needs
+  - Use `\\s+` regex-compatible spacing (avoid paths with spaces in simple configs)
 - **workingDirectory**: Path to the server files (relative or absolute)
 - **autoStart**: Set to `true` to start automatically, `false` to start manually
 - **host**: IP address the server will bind to (usually 127.0.0.1 for local)
 - **port**: Unique port for each server
 - **startupDelay**: Time in milliseconds to wait between starting each server
 - **registerServersWithProxy**: Automatically add servers to Velocity's server list
+- **serverRegistrationDelay**: Time in milliseconds to wait after server start before registering with proxy (allows server warmup)
 
 ### 4. Configure Server Ports
 
