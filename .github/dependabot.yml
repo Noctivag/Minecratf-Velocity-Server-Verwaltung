@@ -1,0 +1,39 @@
+version: 2
+updates:
+  - package-ecosystem: "gradle"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "fix"
+    open-pull-requests-limit: 5
+    ignore:
+      - dependency-name: "com.velocitypowered:velocity-api" # Ignore velocity so we can handle API updates
+        update-types: ["version-update:semver-major"]
+  - package-ecosystem: "gradle"
+    directory: "/api/"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "fix"
+    open-pull-requests-limit: 5
+    ignore:
+      - dependency-name: "com.velocitypowered:velocity-api" # Ignore velocity so we can handle API updates
+        update-types: ["version-update:semver-major"]
+  - package-ecosystem: "gradle"
+    directory: "/app/"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "fix"
+    open-pull-requests-limit: 5
+  - package-ecosystem: "gradle"
+    directory: "/docker-broker/"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "fix"
+    open-pull-requests-limit: 5
+    ignore:
+      - dependency-name: "com.velocitypowered:velocity-api" # Ignore velocity so we can handle API updates
+        update-types: ["version-update:semver-major"]
