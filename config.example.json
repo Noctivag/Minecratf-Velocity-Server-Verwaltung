@@ -1,0 +1,60 @@
+{
+  "servers": [
+    {
+      "name": "lobby",
+      "minigameType": "lobby",
+      "startCommand": "java -Xmx512M -Xms512M -jar server.jar nogui",
+      "workingDirectory": "./servers/lobby",
+      "autoStart": true,
+      "host": "127.0.0.1",
+      "port": 25565
+    },
+    {
+      "name": "bedwars-1",
+      "minigameType": "bedwars",
+      "startCommand": "java -Xmx1G -Xms1G -jar server.jar nogui",
+      "workingDirectory": "./servers/bedwars-1",
+      "autoStart": true,
+      "host": "127.0.0.1",
+      "port": 25566
+    },
+    {
+      "name": "bedwars-2",
+      "minigameType": "bedwars",
+      "startCommand": "java -Xmx1G -Xms1G -jar server.jar nogui",
+      "workingDirectory": "./servers/bedwars-2",
+      "autoStart": true,
+      "host": "127.0.0.1",
+      "port": 25567
+    },
+    {
+      "name": "skywars-1",
+      "minigameType": "skywars",
+      "startCommand": "java -Xmx1G -Xms1G -jar server.jar nogui",
+      "workingDirectory": "./servers/skywars-1",
+      "autoStart": true,
+      "host": "127.0.0.1",
+      "port": 25568
+    },
+    {
+      "name": "skywars-2",
+      "minigameType": "skywars",
+      "startCommand": "java -Xmx1G -Xms1G -jar server.jar nogui",
+      "workingDirectory": "./servers/skywars-2",
+      "autoStart": true,
+      "host": "127.0.0.1",
+      "port": 25569
+    },
+    {
+      "name": "survivalgames",
+      "minigameType": "survivalgames",
+      "startCommand": "java -Xmx1G -Xms1G -jar server.jar nogui",
+      "workingDirectory": "./servers/survivalgames",
+      "autoStart": true,
+      "host": "127.0.0.1",
+      "port": 25570
+    }
+  ],
+  "startupDelay": 5000,
+  "registerServersWithProxy": true
+}
